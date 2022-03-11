@@ -8,6 +8,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 
 import { MapComponent } from './components/map/map.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CookieService } from 'ngx-cookie-service';
+
 import {MatMenuModule} from '@angular/material/menu';
 import {MatInputModule} from '@angular/material/input';
 
@@ -23,6 +25,9 @@ import { ElectrodomesticosComponent } from './pages/electrodomesticos/electrodom
 import { AgregarComponent } from './pages/agregar/agregar.component';
 import { LoginComponent } from './components/login/login.component';
 import { environment } from 'src/environments/environment';
+import { RegisterComponent } from './components/register/register.component';
+import { InfoComponent } from './components/info/info.component';
+import { VidrioComponent } from './pages/vidrio/vidrio.component';
 
 
 
@@ -41,7 +46,10 @@ import { environment } from 'src/environments/environment';
     MetalesComponent,
     ElectrodomesticosComponent,
     AgregarComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    InfoComponent,
+    VidrioComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +61,7 @@ import { environment } from 'src/environments/environment';
     MatInputModule
     
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

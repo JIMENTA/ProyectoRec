@@ -2,7 +2,15 @@
     <div class="card text-center">
         <div class="card-body p-4 text-center">
 
-            <form class="example-form" [formGroup]="myForm">
+            <form class="example-form" [formGroup]="formRegister">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Name/Nickname</mat-label>
+                    <input type="text" matInput formControlName="name">
+                    <mat-error *ngIf="name.hasError('required')">
+                        Dinos como te gustaria que te llamaramos
+                    </mat-error>
+                </mat-form-field>
+
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Email</mat-label>
                     <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
@@ -17,7 +25,7 @@
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>password</mat-label>
                     <input type="password" matInput formControlName="password">
-                    <mat-error *ngIf="password.hasError('email') && !password.hasError('required')">
+                    <mat-error *ngIf="password.hasError('password') && !password.hasError('required')">
                         Please enter a 6 caracthers password
                     </mat-error>
                     <mat-error *ngIf="password.hasError('required')">
@@ -25,16 +33,17 @@
                     </mat-error>
                 </mat-form-field>
 
-                <div class="d-flex justify-content-around">
-                    <button class="btn btn-outline-dark flex-grow-1 m-2" (click)="signIn()">Sign in</button>
-                    <button class="btn btn-outline-dark flex-grow-1 m-2" (click)="logInWithGoogle()">
-                    <i class="fab fa-google me-2"></i> Sign in with Google</button>
+
+                <label for="terms" class="m-2"> Acepto que cuiden de mis datos</label>
+                <input type="checkbox" id="terms" formControlName="terms">
+                <mat-error *ngIf="terms.hasError('requiredTrue')">
+                    Please check! te cuidaremos :)
+                </mat-error>
+
+
+                <div>
+                    <button class="btn btn-success btn-block m-2" (click)="signUp()">Ser parte</button>
                 </div>
-
             </form>
-
-            <!-- <div>
-                <button class="btn btn-info btn-block m-2" (click)="logOut()">Salir</button>
-            </div> -->
         </div>
     </div>

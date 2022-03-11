@@ -10,7 +10,7 @@ export class AuthService {
 
   constructor(private afauth : AngularFireAuth) { }
 
-  async register(email:string, password:string){
+  async signUp(email:string, password:string){
     try{
       return await this.afauth.createUserWithEmailAndPassword(email,password)
     }catch(err){
@@ -35,5 +35,9 @@ export class AuthService {
       console.log("error en login con Google", err);
       return null
     }
+  }
+
+  logOut(){
+    this.afauth.signOut();
   }
 }
