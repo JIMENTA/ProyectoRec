@@ -26,8 +26,8 @@ import { AgregarComponent } from './pages/agregar/agregar.component';
 import { LoginComponent } from './components/login/login.component';
 import { environment } from 'src/environments/environment';
 import { RegisterComponent } from './components/register/register.component';
-import { InfoComponent } from './components/info/info.component';
 import { VidrioComponent } from './pages/vidrio/vidrio.component';
+import { InfoComponent } from './pages/info/info.component';
 
 
 

@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { GuardGuard } from './guard.guard';
 
 
-import { InfoComponent } from './components/info/info.component';
+
 import { LandComponent } from './components/land/land.component';
 import { LoginComponent } from './components/login/login.component';
 import { MapComponent } from './components/map/map.component';
@@ -17,6 +17,7 @@ import { PapelesComponent } from './pages/papeles/papeles.component';
 import { PlasticosComponent } from './pages/plasticos/plasticos.component';
 import { RopaComponent } from './pages/ropa/ropa.component';
 import { VidrioComponent } from './pages/vidrio/vidrio.component';
+import { InfoComponent } from './pages/info/info.component';
 
 const routes: Routes = [
   {path:'', component: LandComponent, pathMatch:'full'},

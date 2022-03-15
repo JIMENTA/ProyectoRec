@@ -33,15 +33,21 @@ export class LoginComponent implements OnInit {
     this.authService.login(email,password).then( (res:any) => {
       console.log("se registro ", res);
       this.cookieService.set('token_access', res.accessToken, 4,'/');
-      this.router.navigate(['/'])
+      this.router.navigate(['/']);
+      if(res === null){
+        alert('please registrate !' )
+        this.router.navigate(['/register'])
+      }
     })
+
   }
 
   logInWithGoogle(){
     const email = this.myForm.value.email;
     const password = this.myForm.value.password;
     this.authService.loginWithGoogle(email,password).then( res => {
-      console.log("se registro ", res)
+      console.log("se registro ", res);
+      this.router.navigate(['/'])
     })
   }
 
